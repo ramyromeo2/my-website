@@ -1,4 +1,25 @@
 
+document.addEventListener('DOMContentLoaded', function() {
+  // Get the video containers
+  const videoContainers = document.querySelectorAll('.video-container');
+
+  // Loop through each video container and generate a unique src and poster
+  for (let i = 0; i < videoContainers.length; i++) {
+    // Generate a random number between 1 and 1280
+    const randomNumber = Math.floor(Math.random() * 1280) + 1;
+    const videoNumber = randomNumber.toString();
+    // Get the video element inside the container
+    const video = videoContainers[i].querySelector('.video');
+    // Set the src attribute with the generated number
+    video.src = `../shorts_videos/${videoNumber}.mp4`;
+    // Set the poster attribute with the same generated number
+    video.poster = `../shorts-posters/${videoNumber}.jpg`;
+    // Set the data-src attribute with the same generated number
+    video.setAttribute('data-src', `../shorts_videos/${videoNumber}.mp4`);
+  }
+});
+
+
 
 
 
